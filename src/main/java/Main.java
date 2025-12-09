@@ -5,12 +5,15 @@ public class Main {
 	public static void main(String[] args) {
 	    
 	    
-	    int [] a = {67,34,45,6,1,4,3};
+	    int [] a = {67,3,4,6,1,4,1,3};
 	    int [] b = {1,2,9,10,11,15};
 	    Node<Integer> p = buildList(a);
 	    Node<Integer> h = buildList(b);
 	    //System.out.println(ex1(p,h));
-	    System.out.println(ex2(p));
+	    //System.out.println(ex2(p));
+	    //System.out.println(ex3(p,6));
+	    //System.out.println(ex4(p));
+	    //System.out.println(ex5(p));
 	}
 	
 	public static Node<Integer> buildList(int[] a) {
@@ -108,6 +111,71 @@ public class Main {
 		return h.getNext();
 	}
 	
+	public static int ex3(Node<Integer> p,int num) 
+	{
+	    Node<Integer> k = p;
+		int start = 0;
+		int end = 0;
+		
+	    while (k!=null)
+	    {
+	        if (k.getValue() != num)
+	            start++;
+	            
+	        if (k.getValue() == num)
+	        {
+	            k = k.getNext();
+	            while (k!=null)
+	            {
+	                end++;
+	                if (k.getValue() == num)
+	                    end = 0;
+	                k = k.getNext();
+	            }
+	            return end + start;
+	        }
+	        
+	        k = k.getNext();
+	    }
+		return -1;
+	}
+	
+	public static boolean ex4(Node<Integer> p) 
+	{
+		Node<Integer> h = p;
+		Node<Integer> k = p.getNext();
 
-
+		
+	    while (h.getNext()!=null)
+	    {
+	        while (k!=null)
+	        {
+	            if (h.getValue()==k.getValue())
+	                return false;
+	            k = k.getNext();
+	        }
+	        h = h.getNext();
+	        k = h.getNext();
+	    }
+		return true;
+	}
+	
+	public static Node<Integer> ex5(Node<Integer> p) 
+	{
+		Node<Integer> h = ex2(p);
+		Node<Integer> k = new Node<Integer>(null);
+		Node<Integer> x = k;
+		
+	    while (h!=null)
+	    {
+	        if (h.getValue()!=k.getValue())
+	        {
+	            k.setNext(h);
+	            k = k.getNext();
+	        }
+	        h = h.getNext();
+	    }
+		return x.getNext();
+	}
+	
 }
