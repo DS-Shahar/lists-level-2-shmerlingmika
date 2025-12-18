@@ -29,6 +29,7 @@ public class Main {
 	}
 	
 	public static Node<Integer> ex1(Node<Integer> p,Node<Integer> h) 
+	// בהנחה ש - n שווה אורך H + P הסיבוכיות היא O(n)
 	{
 	    Node<Integer> p1 = p;
 		Node<Integer> h1 = h;
@@ -95,6 +96,7 @@ public class Main {
 	}
 	
 	public static Node<Integer> ex2(Node<Integer> p) 
+	// בהנחה ש - n שווה אורך P ואין חשיבות לפעולות החיצוניות הסיבוכיות היא O(n)
 	{
 	    Node<Integer> pp = new Node<Integer>(-1);
 	    pp.setNext(p);
@@ -112,6 +114,7 @@ public class Main {
 	}
 	
 	public static int ex3(Node<Integer> p,int num) 
+	// בהנחה ש - n שווה אורך P הסיבוכיות היא O(n)
 	{
 	    Node<Integer> k = p;
 		int start = 0;
@@ -141,6 +144,7 @@ public class Main {
 	}
 	
 	public static boolean ex4(Node<Integer> p) 
+	// בהנחה ש - n שווה אורך P הסיבוכיות היא O(n^2)
 	{
 		Node<Integer> h = p;
 		Node<Integer> k = p.getNext();
@@ -161,6 +165,7 @@ public class Main {
 	}
 	
 	public static Node<Integer> ex5(Node<Integer> p) 
+	// בהנחה ש - n שווה אורך P ואין התייחסות לפעולות העזר הסיבוכיות היא O(n)
 	{
 		Node<Integer> h = ex2(p);
 		Node<Integer> k = new Node<Integer>(null);
