@@ -96,7 +96,7 @@ public class Main {
 	}
 	
 	public static Node<Integer> ex2(Node<Integer> p) 
-	// בהנחה ש - n שווה אורך P ואין חשיבות לפעולות החיצוניות הסיבוכיות היא O(n)
+	// בהנחה ש - n שווה אורך P והסיבוכיות היא O(n^2)
 	{
 	    Node<Integer> pp = new Node<Integer>(-1);
 	    pp.setNext(p);
@@ -165,7 +165,7 @@ public class Main {
 	}
 	
 	public static Node<Integer> ex5(Node<Integer> p) 
-	// בהנחה ש - n שווה אורך P ואין התייחסות לפעולות העזר הסיבוכיות היא O(n)
+	// בהנחה ש - n שווה אורך P הסיבוכיות היא O(n^2)
 	{
 		Node<Integer> h = ex2(p);
 		Node<Integer> k = new Node<Integer>(null);
